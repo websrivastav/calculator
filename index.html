@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="main.css">
+    
+    <style>
+        body(text-align:center;)
+        .form{
+            padding: 20px;
+    display: inline-block;
+    background: #000;
+    border-radius: 10px;
+        }
+        .form .value_box input[type="text"]{width:100%;height: 45px;margin-bottom: 15px;}
+        .four_column{display: grid;grid-template-columns: repeat(4, 25%);}
+        .three_column{display: grid;grid-template-columns: repeat(3, 33.33%);place-items: center;}
+        .four_column input, .three_column input{    margin: 10px 5px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;}
+    </style>
+</head>
+<body>
+    <form name="calc_form" class="form">
+        <div class="value_box">
+            <input type="text" name="answer">
+        </div>
+        <div class="four_column">
+            <input type="button" value="AC" onclick="calc_form.answer.value = ''">
+            <input type="button" value="/" onclick="calc_form.answer.value += '/'">
+            <input type="button" value="%" onclick="calc_form.answer.value += '%'">
+            <input type="button" value="." onclick="calc_form.answer.value += '.'">
+        </div>
+
+        <div class="four_column">
+            <input type="button" value="7" onclick="calc_form.answer.value += '7'">
+            <input type="button" value="8" onclick="calc_form.answer.value += '8'">
+            <input type="button" value="9" onclick="calc_form.answer.value += '9'">
+            <input type="button" value="X" onclick="calc_form.answer.value += '*'">
+        </div>
+
+        <div class="four_column">
+            <input type="button" value="4" onclick="calc_form.answer.value += '4'">
+            <input type="button" value="5" onclick="calc_form.answer.value += '5'">
+            <input type="button" value="6" onclick="calc_form.answer.value += '6'">
+            <input type="button" value="-" onclick="calc_form.answer.value += '-'">
+        </div>
+
+        <div class="four_column">
+            <input type="button" value="1" onclick="calc_form.answer.value += '1'">
+            <input type="button" value="2" onclick="calc_form.answer.value += '2'">
+            <input type="button" value="3" onclick="calc_form.answer.value += '3'">
+            <input type="button" value="+" onclick="calc_form.answer.value += '+'">
+        </div>
+
+        <div class="three_column">
+            <input type="button" value="0" onclick="calc_form.answer.value += '0'">
+            <input type="button" value="00" onclick="calc_form.answer.value += '00'">
+            <input type="button" value="=" onclick="calc_form.answer.value = eval(calc_form.answer.value);">
+        </div>
+    </form>
+
+    <script type="text/javascript" src="../revision/tutorial.js"></script>
+</body>
+</html>
